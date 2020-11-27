@@ -1,6 +1,7 @@
 <script>
   import CheckButton from '@/components/Survey/components/CheckButton'
   import ThvButton from '@/components/Shared/Button'
+  import { mapGetters } from 'vuex'
 
   export default {
     name: 'Goals',
@@ -45,6 +46,12 @@
       back () {
         this.$router.push('/name')
       }
+    },
+    computed: {
+      ...mapGetters('survey', ['getFirstName']),
+      firstName () {
+        return this.getFirstName
+      }
     }
   }
 </script>
@@ -53,7 +60,7 @@
   <div class="grid-x grid-x-margin">
     <div class="cell small-12 medium-6 medium-offset-3">
       <div class="survey-questions__goals align-center">
-        <h1>Nice to meet you {{ name }}. What would you like to focus on?</h1>
+        <h1>Nice to meet you {{ firstName }}. What would you like to focus on?</h1>
         <p class="body--large question-description">Choose up to four</p>
         <div class="spacer sp__top--sm"></div>
         <check-button v-for="(goal, key) in goals" :key="key" :text="goal.name"></check-button>

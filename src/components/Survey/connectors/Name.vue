@@ -16,6 +16,7 @@
     methods: {
       submit () {
         this.$router.push('/goals')
+        this.$store.dispatch('survey/setFirstName', this.name)
       }
     }
   }
