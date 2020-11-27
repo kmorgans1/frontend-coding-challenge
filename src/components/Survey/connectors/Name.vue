@@ -16,7 +16,7 @@
     methods: {
       submit () {
         this.$router.push('/goals')
-        this.$store.dispatch('survey/setFirstName', this.name)
+        this.$store.commit('survey/setFirstName', this.name)
       }
     }
   }
