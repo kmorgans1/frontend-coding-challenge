@@ -34,8 +34,10 @@
         this.$validator.reset()
         this.$validator.validate().then(result => {
           if (result && !this.feedback) {
-            this.$router.push('/success')
             this.$store.commit('survey/setBirthday', this.dob)
+            this.$store.dispatch('survey/sendToApi')
+              .then(result => this.$router.push('/success'))
+              .catch(error => console.log(error.response.data.error))
           }
         })
       },

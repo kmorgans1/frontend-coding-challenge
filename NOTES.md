@@ -18,3 +18,7 @@
 
 - Originally I was saving the current step as a string and finding the index of it in the stages array. This seemed unmanageable if the survey went on to add many more pages so
 opted for a counter instead
+
+**Task 5: API Call**
+
+- Tested my implmentation by removing the disabled class on the name page next button, without inputting name it successfully throws an error stating name field is empty. 
