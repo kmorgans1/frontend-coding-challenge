@@ -26,6 +26,6 @@ export default {
     state.user.goals = [],
     state.user.diet = '',
     state.user.dob = '',
-    state.user.currentStage = 0
+    state.currentStage = 0
   }
 }

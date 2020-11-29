@@ -68,7 +68,6 @@
 <style lang='css'>
 .success-box {
   margin-bottom: 30px;
-  margin-top: 60px;
 }
 
 .successImg {

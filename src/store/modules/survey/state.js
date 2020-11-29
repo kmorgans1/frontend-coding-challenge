@@ -6,7 +6,7 @@ const state = () => ({
     dob: ''
   },
 
-  stages: ['Name', 'Goals', 'Diet', 'Dob', 'Success'],
+  stages: ['Name', 'Goals', 'Diet', 'Dob'],
   currentStage: 0
 })
 
