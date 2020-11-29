@@ -45,12 +45,24 @@
       },
       back () {
         this.$router.push('/name')
+      },
+      setGoals (goal) {
+        this.$store.commit('survey/setGoals', goal)
+      },
+      isGoalSelected (goal) {
+        return this.getGoals.includes(goal)
       }
     },
     computed: {
-      ...mapGetters('survey', ['getFirstName']),
+      ...mapGetters('survey', ['getFirstName', 'getGoals']),
       firstName () {
         return this.getFirstName
+      },
+      disableGoalChoice () {
+        return this.getGoals.length >= 4 && this.noGoalsSelected
+      },
+      noGoalsSelected () {
+        return !this.getGoals.length
       }
     }
   }
@@ -63,7 +75,14 @@
         <h1>Nice to meet you {{ firstName }}. What would you like to focus on?</h1>
         <p class="body--large question-description">Choose up to four</p>
         <div class="spacer sp__top--sm"></div>
-        <check-button v-for="(goal, key) in goals" :key="key" :text="goal.name"></check-button>
+        <check-button v-for="(goal, key) in goals" 
+         :key="key" 
+         :text="goal.name" 
+         :value="goal.name"
+         :selected="isGoalSelected(goal.name)"
+         :disabled="disableGoalChoice"
+         @click="setGoals"
+         />
         <div class="grid-x button-container">
           <div class="cell auto">
             <div class="back-button-container">
@@ -71,7 +90,7 @@
             </div>
           </div>
           <div class="cell auto align-right">
-            <thv-button element="button" size="large" @click="submit">Next</thv-button>
+            <thv-button element="button" size="large" :disabled="noGoalsSelected" @click="submit">Next</thv-button>
           </div>
         </div>
       </div>

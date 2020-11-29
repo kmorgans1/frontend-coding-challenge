@@ -13,13 +13,26 @@
       selected: {
         type: Boolean,
         default: false
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      }
+    },
+    methods: {
+      chooseValue (value) {
+        this.$emit('click', value)
       }
     }
   }
 </script>
 
 <template>  
-  <div class="check-button" :class="{ 'check-button--selected': selected }" tabindex="0">
+  <div class="check-button" 
+  :class="{ 'check-button--selected': selected, 'check-button--disabled': disabled }" 
+  :value="value" 
+  @click="chooseValue(value)" 
+  tabindex="0">
     <p class="check-button__text body--large">{{ text }}</p>
   </div>
 </template>

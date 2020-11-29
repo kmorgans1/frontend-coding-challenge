@@ -4,4 +4,12 @@
 
 - The current live Thriva survey also collects surname, so I have labelled the getting/setting of 'name' as 'firstName' for transparency (if a surname task was added later on).
 - I have used the mapGetters helper to simplify accessing the getters - may be useful in later tasks rather than writing out the store path each time. 
-- Decided to remove the action for task 1 as its not an asynch task and has no other logic - so only mutation needed. 
+- Decided to remove the action for task 1 as its not an async task and has no other logic - so only mutation needed. 
+
+**Task 2: Storing up to 4 goals and 1 diet**
+
+- Checkbox component needs to be as generic as possible in order to be reusable so simply emits the chosen value
+- Storing goals as an array of strings as shown in the instructions - also allows easier manipulation in the mutation
+- Created 'setGoals' mutation that takes the clicked value and either adds it to the goal state (if not already there and less than 4 chosen) or removes it if already there
+- I asssumed that at least one goal needed to be chosen - confirmed by looking at the current live Thriva survey that has the next button disabled until a goal is chosen.
+- Not sure if users should be able to unselect a diet- have added that functionality as next button catches validation if none chosen.
