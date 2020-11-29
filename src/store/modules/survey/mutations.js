@@ -1,18 +1,21 @@
 export default {
   setFirstName (state, name) {
-    state.name = name
+    state.user.name = name
   },
   setGoals (state, goal) {
-    if (state.goals.length < 4 && !state.goals.includes(goal)) {
-      state.goals.push(goal)
-    } else if (state.goals.includes(goal)) {
-      state.goals = state.goals.filter(x => x !== goal)
+    if (state.user.goals.length < 4 && !state.user.goals.includes(goal)) {
+      state.user.goals.push(goal)
+    } else if (state.user.goals.includes(goal)) {
+      state.user.goals = state.user.goals.filter(x => x !== goal)
     }
   },
   setDiet (state, diet) {
-    state.diet = state.diet !== diet ? state.diet = diet : state.diet.replace(diet, '')
+    state.user.diet = state.user.diet !== diet ? state.user.diet = diet : state.user.diet.replace(diet, '')
   },
   setBirthday (state, dob) {
-    state.dob = dob
+    state.user.dob = dob
+  },
+  setCurrentStage (state) {
+    state.currentStage++
   }
 }

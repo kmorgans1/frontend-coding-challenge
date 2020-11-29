@@ -6,7 +6,7 @@
         type: Boolean,
         required: false
       },
-      currentStep: {
+      currentStage: {
         type: Number,
         required: true
       },
@@ -23,7 +23,7 @@
       segmentStyle () { return { 'background-color': this.color } },
       mercuryStyle () { return { 'width': this.percentage + '%', 'background-color': this.color } },
       percentage () {
-        const percent = (this.currentStep / this.totalSteps) * 100
+        const percent = (this.currentStage / this.totalSteps) * 100
         return Math.min(100, percent)
       }
     }

@@ -13,3 +13,8 @@
 - Created 'setGoals' mutation that takes the clicked value and either adds it to the goal state (if not already there and less than 4 chosen) or removes it if already there
 - I asssumed that at least one goal needed to be chosen - confirmed by looking at the current live Thriva survey that has the next button disabled until a goal is chosen.
 - Not sure if users should be able to unselect a diet- have added that functionality as next button catches validation if none chosen.
+
+**Task 4: Survey Progress**
+
+- Originally I was saving the current step as a string and finding the index of it in the stages array. This seemed unmanageable if the survey went on to add many more pages so
+opted for a counter instead

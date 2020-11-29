@@ -3,6 +3,9 @@
   import DobInput from '@/components/Shared/DobInput'
 
   export default {
+    beforeMount () {
+      this.$store.commit('survey/setCurrentStage')
+    },
     name: 'Dob',
     components: {
       DobInput,

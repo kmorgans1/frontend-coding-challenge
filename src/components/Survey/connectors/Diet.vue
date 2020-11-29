@@ -4,6 +4,9 @@
   import { mapGetters } from 'vuex'
 
   export default {
+    beforeMount () {
+      this.$store.commit('survey/setCurrentStage')
+    },
     name: 'Diet',
     components: {
       ThvButton,

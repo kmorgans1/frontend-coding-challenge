@@ -3,6 +3,9 @@
   import ThvButton from '@/components/Shared/Button'
 
   export default {
+    beforeMount () {
+      this.$store.commit('survey/setCurrentStage')
+    },
     name: 'Name',
     components: {
       TextInput,

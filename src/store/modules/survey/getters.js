@@ -1,6 +1,8 @@
 export default {
-  getFirstName: state => state.name,
-  getGoals: state => state.goals,
-  getDiet: state => state.diet,
-  getBirthday: state => state.dob
+  getFirstName: state => state.user.name,
+  getGoals: state => state.user.goals,
+  getDiet: state => state.user.diet,
+  getBirthday: state => state.user.dob,
+  getStages: state => state.stages,
+  getCurrentStage: state => state.currentStage
 }
