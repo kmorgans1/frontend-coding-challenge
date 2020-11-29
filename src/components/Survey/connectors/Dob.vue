@@ -8,6 +8,11 @@
       DobInput,
       ThvButton
     },
+    data () {
+      return {
+        dob: ''
+      }
+    },
     computed: {
       disableNext () {
         let under18 = this.$refs.DobInput && this.$refs.DobInput.ageError
@@ -27,6 +32,7 @@
         this.$validator.validate().then(result => {
           if (result && !this.feedback) {
             this.$router.push('/success')
+            this.$store.commit('survey/setBirthday', this.dob)
           }
         })
       },
@@ -45,7 +51,20 @@
         <div class="spacer sp__top--sm"></div>
         <p class="body--large question-description">This helps us recommend the best test for you. We know it's a bit forward but our lips are sealed!</p>
         <div class="spacer sp__top--sm"></div>
-        <dob-input class="align-center survey-input" ref="DobInput" v-validate="'required'" data-vv-value-path="dob" :value="dob" name="dob" :error="errors.has('dob')" minAge="18" :feedback="feedback" @keyup.enter="submit" label=""></dob-input>
+        <dob-input 
+        class="align-center survey-input" 
+        ref="DobInput" 
+        v-validate="'required'" 
+        data-vv-value-path="dob" 
+        :value="dob" 
+        name="dob" 
+        :error="errors.has('dob')" 
+        minAge="18" 
+        :feedback="feedback" 
+        @keyup.enter="submit" 
+        label=""
+        v-model="dob"
+        />
         <div class="grid-x button-container">
           <div class="cell auto">
             <div class="back-button-container">
@@ -53,7 +72,7 @@
             </div>
           </div>
           <div class="cell auto align-right">
-            <thv-button element="button" size="large" @click="submit">Next</thv-button>
+            <thv-button element="button" size="large" :disabled="disableNext" @click="submit">Next</thv-button>
           </div>
         </div>
       </div>

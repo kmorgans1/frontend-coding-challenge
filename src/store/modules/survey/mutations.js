@@ -11,5 +11,8 @@ export default {
   },
   setDiet (state, diet) {
     state.diet = state.diet !== diet ? state.diet = diet : state.diet.replace(diet, '')
+  },
+  setBirthday (state, dob) {
+    state.dob = dob
   }
 }
