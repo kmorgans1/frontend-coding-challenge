@@ -17,7 +17,7 @@ describe('CheckButton', () => {
   // Complete the following statements by implementing tests for the described behaviours
 
   it('should exist as a component', () => {
-
+    expect(test.find('CheckButton').exists()).toBe(true);
   })
 
   it('should render the text value passed as prop correctly', () => {
