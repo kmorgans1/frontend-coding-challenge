@@ -18,6 +18,7 @@
 
 - Originally I was saving the current step as a string and finding the index of it in the stages array. This seemed unmanageable if the survey went on to add many more pages so
 opted for a counter instead
+- Found a bug when testing that I didn't account for the back button, so changed to count on submit and minus on back
 
 **Task 5: API Call**
 

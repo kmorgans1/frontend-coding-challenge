@@ -3,9 +3,6 @@
   import DobInput from '@/components/Shared/DobInput'
 
   export default {
-    beforeMount () {
-      this.$store.commit('survey/setCurrentStage')
-    },
     name: 'Dob',
     components: {
       DobInput,
@@ -30,6 +27,7 @@
     },
     methods: {
       submit () {
+        this.$store.commit('survey/setCurrentStage')
         this.$refs.DobInput.handleSubmit()
         this.$validator.reset()
         this.$validator.validate().then(result => {
@@ -43,6 +41,7 @@
       },
       back () {
         this.$router.push('/diet')
+        this.$store.commit('survey/removeCurrentStage')
       }
     }
   }

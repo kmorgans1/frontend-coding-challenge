@@ -1,11 +1,9 @@
 <script>
   import TextInput from '@/components/Shared/TextInput'
   import ThvButton from '@/components/Shared/Button'
+  import { mapGetters } from 'vuex'
 
   export default {
-    beforeMount () {
-      this.$store.commit('survey/setCurrentStage')
-    },
     name: 'Name',
     components: {
       TextInput,
@@ -13,15 +11,19 @@
     },
     data () {
       return {
-        name: ''
+        name: this.getFirstName
       }
     },
     methods: {
       submit () {
         this.$router.push('/goals')
+        this.$store.commit('survey/setCurrentStage')
         this.$store.commit('survey/setFirstName', this.name)
       }
-    }
+    },
+    computed: {
+    ...mapGetters('survey', ['getFirstName',])
+    }  
   }
 </script>
 

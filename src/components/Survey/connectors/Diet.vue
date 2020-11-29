@@ -4,9 +4,6 @@
   import { mapGetters } from 'vuex'
 
   export default {
-    beforeMount () {
-      this.$store.commit('survey/setCurrentStage')
-    },
     name: 'Diet',
     components: {
       ThvButton,
@@ -41,10 +38,12 @@
     },
     methods: {
       submit () {
+        this.$store.commit('survey/setCurrentStage')
         this.$router.push('/dob')
       },
       back () {
         this.$router.push('/goals')
+        this.$store.commit('survey/removeCurrentStage')
       },
       setDiet (diet) {
         this.$store.commit('survey/setDiet', diet)

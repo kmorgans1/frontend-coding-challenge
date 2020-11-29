@@ -18,6 +18,9 @@ export default {
   setCurrentStage (state) {
     state.currentStage++
   },
+  removeCurrentStage (state) {
+    state.currentStage--
+  },
   resetState (state) {
     state.user.name = '',
     state.user.goals = [],
