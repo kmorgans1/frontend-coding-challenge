@@ -30,7 +30,7 @@
       },
       dob () {
         const date = new Date(this.getBirthday)
-        return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
+        return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
       }
     }
   }
