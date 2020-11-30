@@ -84,7 +84,7 @@
   padding: 30px;
   background-color: #ffffff;
   box-shadow: 0 0.375rem 1.25rem rgba(61, 66, 80, .18);
-  padding: 1rem;
+  padding: 30px;
 }
 
 .label {
