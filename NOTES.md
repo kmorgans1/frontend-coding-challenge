@@ -28,6 +28,12 @@ opted for a counter instead
 
 - The screenshot given and hex code for details doesn't look the same? 
 - If there was more options to display I think a v-for might be better on reflection but was running out of time. 
-- Wanted a simple way to make the date format display nicely - stack overflow seems to recommend moment.js but didn't want to install 3rd party library, found a working date 
-converter in another example so used this instead.
+- Wanted a simple way to make the date format display nicely - stack overflow seems to recommend moment.js but didn't want to install 3rd party library, found a working date converter in another example so used this instead.
 - Reset state is a bit blunt force, maybe should have had an inital blank state? 
+
+
+**Task 7: Testing**
+- Check button test is complete, added and used npm run test-coverage for this.
+- Api test is started but was having issues getting the final test passing so have commented this out
+
+Thank you for the opportunity! Great interactive challenge 🕺 

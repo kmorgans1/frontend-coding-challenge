@@ -22,8 +22,8 @@
       }
     },
     computed: {
-    ...mapGetters('survey', ['getFirstName',])
-    }  
+      ...mapGetters('survey', ['getFirstName'])
+    }
   }
 </script>
 

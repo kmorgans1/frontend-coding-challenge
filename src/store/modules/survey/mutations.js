@@ -22,10 +22,10 @@ export default {
     state.currentStage--
   },
   resetState (state) {
-    state.user.name = '',
-    state.user.goals = [],
-    state.user.diet = '',
-    state.user.dob = '',
+    state.user.name = ''
+    state.user.goals = []
+    state.user.diet = ''
+    state.user.dob = ''
     state.currentStage = 0
   }
 }

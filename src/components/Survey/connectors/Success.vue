@@ -9,16 +9,16 @@
       ThvButton
     },
     methods: {
-      startOver() {
+      startOver () {
         this.$store.commit('survey/resetState')
         this.$router.push('/')
       }
     },
     computed: {
       ...mapGetters('survey', ['getFirstName', 'getGoals', 'getDiet', 'getBirthday']),
-    successThriva () {
-      return SuccessThriva
-    },
+      successThriva () {
+        return SuccessThriva
+      },
       firstName () {
         return this.getFirstName
       },
@@ -31,8 +31,8 @@
       dob () {
         const date = new Date(this.getBirthday)
         return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
-      },
-    },
+      }
+    }
   }
 </script>
 
@@ -83,8 +83,8 @@
 .survey-box {
   padding: 30px;
   background-color: #ffffff;
-  box-shadow: 0 6px 20px 0 #3d42502d;
-  border-radius: 1rem;
+  box-shadow: 0 0.375rem 1.25rem rgba(61, 66, 80, .18);
+  padding: 1rem;
 }
 
 .label {
